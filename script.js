@@ -7,20 +7,40 @@ const phoneInputEl = document.getElementById ('phoneNumberInput');
 
 document.getElementById('addContactBtn').addEventListener('click',onAddContactBtnClick);
 
+contactsListEl.addEventListener('click', onAddContactsListClick)
+
 function onAddContactBtnClick() {
   if (isFormValid()) {
     const newContact = getformData();
+
     addContact ({newContact});
+
     resetForm();  
   }
+}
+
+function onAddContactsListClick(e) {
+  if(e.target.classList.contains('delete-btn')) {
+    const el = getContactRow(e.target);
+    deleteContact(el);
+  }
+}
+
+function getContactRow(el) {
+return el.closest ('.contact-item');
 }
 
 function isFormValid () {
 return (
     !isEmpty(nameInputEl.value) && 
-     !isEmpty(surnameInputEl.value) &&  
+     !isEmpty(surnameInputEl.value) &&   
      !isEmpty(phoneInputEl.value) 
 );
+}
+
+function deleteContact (el) {
+  el.remove();
+
 }
 
 function isEmpty (str) {
