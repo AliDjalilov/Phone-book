@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Books</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <scrip src="./script.js" async></scrip>
+  </head>
+  <body>
+    <div>
+      <table class="books">
+        <thead>
+          <tr>
+            <th class="contacts">Name</th>
+            <th>Surname</th>
+            <th>Phone Number</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="contactsList "></tbody>
+        <tfoot>
+          <tr>
+            <td><input type="text" id="nameInput" /></td>
+            <td><input type="text" id="surnameInput" /></td>
+            <td><input type="tel" id="PhoneNumberInput" /></td>
+            <td><button id="addContactBtn">Creat</button></td>
+          </tr>
+        </tfoot>
+      </table>
+      <script id="newContacteTemplate" type="text/template">
+        <tr class ="contact-item">
+          <td>{{name}}</td>
+          <td>{{surname}}</td>
+          <td>{{phone}}</td>
+          <td><button class="delete-btn">Delete</button></td>
+        </tr>
+      </script>
+    </div>
+  </body>
+</html>
